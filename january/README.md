@@ -9,3 +9,13 @@ The goal of this month is to generate automatically a text in a specific languag
 The file charabia.py contains an algorithm to generate random strings in a language from data collected from a .csv file. The .csv file has info about frequencies in multiple languages.
 
 My program is in Python because I learned this language a few days before the challenge, and I thought this was a great way to train myself with Python (that's why I added a graphical output, to play with matplot).
+
+USAGE :
+
+```sh
+$ python charabia.py [LANG] [OUTPUT_LENGHT]
+```
+
+Example :
+
+![Output produced by the program](img/output_example.png)
