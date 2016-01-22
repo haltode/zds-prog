@@ -1,15 +1,22 @@
 from sys import argv
+
 import operator
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+
 
 lang_dict = {}
 lang_str = ["fr", "de", "es", "pt", "eo", "it", "tr", "sv", "pl", "da", "is",
             "fi", "cs"]
 nb_lang = len(lang_str)
 
+
 def generate_char():
+    """
+    Generate a random character from a distribution in a specific language.
+    """
+
     letter = random.uniform(0.0, 100.0)
 
     for inter in range(0, nb_poss):
@@ -17,22 +24,22 @@ def generate_char():
             return letters[inter]
         if inter == nb_poss - 1:
             return letters[inter]
-        elif (  letter >= prob[letters[inter]] and
+        elif (letter >= prob[letters[inter]] and
                 letter <= prob[letters[inter + 1]]):
             return letters[inter + 1]
 
+
 def draw_chart(str):
     occurrence = {}
-
     # Count occurrences in the output text
     for letter in str:
         occurrence[letter] = occurrence.get(letter, 0) + 1
-
     # Calculate frequencies
     for letter in letters:
         if letter in occurrence:
             occurrence[letter] = occurrence[letter] / length * 100
 
+    # Chart config
     occur_list = sorted(occurrence.items(), key=operator.itemgetter(0))
 
     x_legend = sorted(occurrence.keys())
@@ -63,10 +70,11 @@ def draw_chart(str):
     plt.title("Fréquence d'apparition des lettres")
     plt.xticks(y_legend + bar_width, x_legend)
     plt.legend()
-    
+
     plt.show()
 
-# Init language param
+
+# Initialize language param
 lang = argv[1]
 if lang not in lang_str:
     raise LangError("Please specify a valid language")
@@ -85,7 +93,7 @@ for line in lines:
     # Only need letters in the language alphabet
     if result != 0:
         prob[number[0]] = result
-prob_list = sorted(prob.items(), key=operator.itemgetter(1)) 
+prob_list = sorted(prob.items(), key=operator.itemgetter(1))
 
 # Extract only letters from the sorted list
 letters = [item[0] for item in prob_list]
@@ -103,5 +111,4 @@ for iChar in range(0, length):
     output += generate_char()
 
 print(output)
-
 draw_chart(output)

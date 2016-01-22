@@ -18,4 +18,4 @@ $ python charabia.py [LANG] [OUTPUT_LENGHT]
 
 Example :
 
-![Output produced by the program](img/output_example.png)
+![Output produced by the program](charabia/output_example.png)
