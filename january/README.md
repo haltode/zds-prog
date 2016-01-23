@@ -21,3 +21,7 @@ Example :
 ## Markov
 
 The program `markov.py` generates a random text by imitating from an input file and creating a [Markov chain](https://en.wikipedia.org/wiki/Markov_chain).
+
+```sh
+$ python markov.py [INPUT] [OUTPUT_LENGTH] [ORDER]
+```

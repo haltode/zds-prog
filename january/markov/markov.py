@@ -2,17 +2,6 @@ from sys import argv
 import random
 
 
-ORDER = 2
-
-
-def rearrange(content):
-    new_string = ""
-    for c in content:
-        if c.isalpha() or c == ' ' or c == '.':
-            new_string += c.lower()
-    return new_string
-
-
 def create_markov_chain(content, order):
     words = content.split(' ')
     chain = {}
@@ -23,7 +12,7 @@ def create_markov_chain(content, order):
             string += words[start + i]
             if i != order - 1:
                 string += " "
-        # End of a sentence, so no actual relation with the next words
+        # End of a sentence, so no actual relation with the next word
         if '.' in string:
             continue
 
@@ -38,29 +27,45 @@ def create_markov_chain(content, order):
     return chain
 
 
-def generate_text(chain, limit):
+def generate_text(chain, limit, order):
     choices = list(chain.keys())
     random_start = random.randint(0, len(choices) - 1)
     nb_time = 0
+    output = ""
 
     current = choices[random_start]
 
-    while current in chain and nb_time < limit:
+    while nb_time < limit:
         possibilities = chain[current]
         suffix = random.randint(0, len(chain[current]) - 1)
-        print(possibilities[suffix])
+        output += possibilities[suffix] + " "
 
         prefix = current.split(' ')
-        current = prefix[1] + " " + possibilities[suffix]
+
+        if order > 1:
+            current = ""
+            for i in range(1, order):
+                current += prefix[i]
+            current += " " + possibilities[suffix]
+        else:
+            current = possibilities[suffix]
 
         nb_time += 1
 
+        if current not in chain:
+            random_start = random.randint(0, len(choices) - 1)
+            current = choices[random_start]
 
-# Input file
+    return output
+
+
 input = argv[1]
+length = int(argv[2])
+order = int(argv[3])
+
 with open(input, "r") as f:
     content = f.read()
 
-#content = rearrange(content)
-chain = create_markov_chain(content, ORDER)
-generate_text(chain, int(argv[2]))
+chain = create_markov_chain(content, order)
+output = generate_text(chain, length, order)
+print(output)
