@@ -1,5 +1,3 @@
-# zds-defis
+# Zeste de Savoir
 
-Monthly programming challenge from a french forum : https://zestedesavoir.com/
-
-Link to the challenges : <https://zestedesavoir.com/forums/sujet/3813/les-defis-de-clem/?page=1>
+This repository contains multiple projects and source codes about a french forum : <https://zestedesavoir.com>. This includes monthly challenges, but also different types of workshops on various subjects.
