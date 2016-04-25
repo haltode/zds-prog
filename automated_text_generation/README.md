@@ -1,4 +1,4 @@
-# January 2016
+# Automated text generation
 
 Link to the challenge : <https://zestedesavoir.com/forums/sujet/5039/janvier-2016-generation-automatique-de-texte/>
 
