@@ -1,5 +1,7 @@
-Titre : [Défi de Clem] A la quête du zeste perdu !
+Titre : [Défi de Clem] A la quête du zeste perdu !  
 Sous-titre : Les défis de Clem sont de retours... ~~pour vous jouer un mauvais tour~~
+
+TODO : rajouter des images
 
 Hourra ! Vous avez enfin réussi à participer à un JZDS, et cette rencontre un peu particulière se déroule en plein milieu d'une fête foraine. L'idée vous paraît étrange aux premiers abords, mais vu que c'est votre première fois à ce genre d'événement, vous acceptez sans hésiter.
 
@@ -14,8 +16,8 @@ TODO : barème 5 pts par sortie et 15 pts par explication
 
 Une ambiance apaisante règne autour du premier stand. Un petit ruisseau d'eau coule près de vous et l'odeur de l'encens parfume vos narines. Assis en position tailleur, un vieille homme pensif que vous apercevez en pleine séance de méditation. Uniquement en posant vos yeux sur lui, il se relève et vous salue respectueusement avant de vous introduire à la tâche que vous devez résoudre : une **énigme**.
 
-> Expliquer la sortie du programme tu devras,
-> Compiler ou écrire tu ne pourras pas,
+> Expliquer la sortie du programme tu devras,  
+> Compiler ou écrire tu ne pourras pas,  
 > Lire sur cette feuille est ton unique choix.
 Source: L'homme du stand
 
@@ -28,7 +30,7 @@ Vous êtes surveillé et vous devez obligatoirement obéir à ses règles afin d
 ## Stand 2 : qui a la plus petite ... solution ?!
 *Rapporte $242 - taille$ zestes !*
 
-> <Adam> Les sentiments ça compte ma chérie
+> <Adam> Les sentiments ça compte ma chérie  
 > <Cassandra> Les centimètres aussi ^^
 Source: DTC #2408
 
@@ -36,21 +38,21 @@ Tout est une question de taille, et pourtant, vous êtes persuadé d'avoir la pl
 
 Voici la règle :
 
-> Votre programme prend en entrée un nombre N de lignes et M de colonnes, et il devra afficher un rectangle de dimension NxM avec chaque ligne constituée de M caractères étant soit X (sur une ligne paire), soit O (sur une ligne impaire).
-> Détail : langage de programmation libre.
-> But : réaliser le code le plus court possible (tous les caractères du fichier comptent)
-> Exemple :
-> Entrée : 3 4
-> Sortie :
-> OOOO
-> XXXX
+> **Enoncé** : votre programme prend en entrée un nombre N de lignes et M de colonnes, et il devra afficher un rectangle de dimension NxM avec chaque ligne constituée de M caractères étant soit X (sur une ligne paire), soit O (sur une ligne impaire).  
+> **Détail** : langage de programmation libre.  
+> **But** : réaliser le code le plus court possible (tous les caractères du fichier comptent)  
+> **Exemple** :  
+> Entrée : 3 4  
+> Sortie :  
+> OOOO  
+> XXXX  
 > OOOO
 Source: La règle
 
 ## Stand 3 : le côté obscur
 *Rapporte un nombre arbitraire de zeste sur 100 en fonction de l'originalité !*
 
-Epuisé par votre dernier combat, qui fut bien rude, vous allez discuter avec une des membres de Zeste de Savoir. Après avoir bien discuté, cette dernière vous avoue que le stand de pomme d'amour est sans surveillance durant un court instant. Vous ne voulez pas dépenser un seul *zeste* pour économiser afin d'acheter des bières, mais d'un autre côté vous avez terriblement faim car vous êtes fatigué. La tentation est trop grande. Impossible d'y résister. Discrètement, vous vous approchez du stand et glissez votre main au niveau d'une pomme. Cependant, le gérant du stand apparaît de nul part ! Il vous aperçoit et vous tire à part derrière le stand. Après un long sermon, et des explications de votre part, le gérant accepte d'oublier ce qu'il a vu, mais a une seule condition : que vous l'aidiez.L'homme vous confie qu'il est un agent de la NSA, et qu'il a pour mission d'infiltrer le programme principal de la fête foraine, cependant il n'y connait rien en sécurité informatique et avoue qu'il a rejoins la NSA uniquement car il est un grand fan des [pygargue à tête blanche](https://fr.wikipedia.org/wiki/Pygargue_%C3%A0_t%C3%AAte_blanche). Vous savez très bien que s'il vous livre aux autorités, vous serez bannis de la fête foraine et vous ne serez jamais le roi. Cette idée vous pétrifie au plus profond de vous, alors vous acceptez.
+Epuisé par votre dernier combat, qui fut bien rude, vous allez discuter avec une des membres de Zeste de Savoir. Après avoir bien discuté, cette dernière vous avoue que le stand de pomme d'amour est sans surveillance durant un court instant. Vous ne voulez pas dépenser un seul *zeste* pour économiser afin d'acheter des bières, mais d'un autre côté vous avez terriblement faim car vous êtes fatigué. La tentation est trop grande. Impossible d'y résister. Discrètement, vous vous approchez du stand et glissez votre main au niveau d'une pomme. Cependant, le gérant du stand apparaît de nul part ! Il vous aperçoit et vous tire à part derrière le stand. Après un long sermon, et des explications de votre part, le gérant accepte d'oublier ce qu'il a vu, mais a une seule condition : que vous l'aidiez.L'homme vous confie qu'il est un agent de la NSA, et qu'il a pour mission d'infiltrer le programme principal de la fête foraine, cependant il n'y connait rien en sécurité informatique et avoue qu'il a rejoins la NSA uniquement car il est un grand fan des [pygargues à tête blanche](https://fr.wikipedia.org/wiki/Pygargue_%C3%A0_t%C3%AAte_blanche). Vous savez très bien que s'il vous livre aux autorités, vous serez bannis de la fête foraine et vous ne serez jamais le roi. Cette idée vous pétrifie au plus profond de vous, alors vous acceptez.
 
 N'y connaissant réellement rien, l'agent de la NSA vous demande d'écrire n'importe quel programme dans n'importe quel langage qui pourrait contenir des exploitations. Vous êtes un peu perdu et vous ne savez pas exactement par où commencer. Sous la pression de l'agent, vous décidez donc d'utiliser votre joker d'appel à un ami pour passer un coup de fil à [Edward Snowden](https://fr.wikipedia.org/wiki/Edward_Snowden). Malheureusement, le temps qu'il s'assure que c'était bien vous et qu'il comprenne ce que vous deviez faire, il n'a évoquez que quelques pistes :
 
@@ -91,5 +93,6 @@ Quelle aventure ! Vous arrivez enfin au bar, après toutes ces épreuves, mais l
 
 | Pseudo | Stand 1 | Stand 2 | Stand 3 | Stand 4 | Total |
 | ------ | ------- | ------- | ------- | ------- | ----- |
+| | | | | |
 
 *[JZDS]: Jeudi de Zeste de Savoir
