@@ -3,11 +3,9 @@ Sous-titre : Les défis de Clem sont de retours... ~~pour vous jouer un mauvais 
 
 Hourra ! Vous avez enfin réussi à participer à un JZDS, et cette rencontre un peu particulière se déroule en plein milieu d'une fête foraine. L'idée vous paraît étrange aux premiers abords, mais vu que c'est votre première fois à ce genre d'événement, vous acceptez sans hésiter.
 
-![La JZDS](https://pixabay.com/static/uploads/photo/2013/11/28/09/57/people-219806_960_720.jpg)
-
 Malheureusement, les bières de la fête foraine ne s'achètent pas en euros, mais en *zestes*. Une monnaie unique au parc. Or, tout le monde sait que lors d'un JZDS, celui qui a le plus de bières devient le roi. Vous avez envie d'être le roi. Si, si, je vous assure.
 
-![Le Graal...](https://pixabay.com/static/uploads/photo/2013/10/23/09/04/beer-199650_960_720.jpg)
+![Le Graal](https://pixabay.com/static/uploads/photo/2013/10/23/09/04/beer-199650_960_720.jpg)
 
 Vous entreprenez donc l'aventure de récolter le plus de *zestes* possibles en participant à différents stands de la fête foraine afin d'assouvir votre soif de pouvoir.
 
