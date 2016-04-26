@@ -2,6 +2,20 @@
 
 ## Stand 1
 
+La sortie du programme est :
+
+```
+Le tableau n'a pas 3 elements.
+La chaine a 18 caracteres.
+Erreur taille.
+```
+
+Sans doute le piège le plus "simple" était le ';' après le `else`, ce qui créait un bloc vide rendant le dernier `printf` toujours accessible quelque soit le résultat des conditions précédentes.
+
+Le deuxième piège, un peu plus compliqué cette fois, était pour la chaîne de caractères. Le plus étrange était bien sûr `r`, en C lorsqu'une expression est de la sorte `x = (y, z);`, cela revient à écrire `x = z;` car l'expression à gauche sera évaluée, puis celle à droite et c'est cette dernière que la variable prendra. Du coup, on a `r = 1;` (le coup du +1 pour le caractère \0 était un prétexte en réalité). Au passage, cette technique pour trouver le nombre d'éléments ne fonctionnent pas sur un pointeur de caractères, donc aucune chance d'avoir 18 en retour. J'avais aussi laissé la macro susceptible d'[effet de bord](https://fr.wikipedia.org/wiki/Effet_de_bord_%28informatique%29) pour laisser de fausses pistes.
+
+Maintenant, le piège fourbe : le premier `if`. Dans le texte, je prétends ne pas vouloir que les participants copient/collent afin aussi d'éviter que la syntaxe fasse ressortir le piège flagrant alors. Si on enlève le commentaire juste au dessus, le `printf` n'est pas exécuté ! C'est à cause du dernier caractère du commentaire '\'. En effet, ça annonce un commentaire multiligne et donc le `if` est considéré comme un commentaire aussi ! :D
+
 ## Stand 2
 
 Pas de solution à faire.
