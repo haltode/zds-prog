@@ -14,8 +14,6 @@ Vous entreprenez donc l'aventure de récolter le plus de *zestes* possibles en p
 ## Stand 1 : le grand sage
 *Rapporte jusqu'à 60 zestes !*
 
-TODO : barème 5 pts par sortie et 15 pts par explication
-
 Une ambiance apaisante règne autour du premier stand. Un petit ruisseau d'eau coule près de vous et l'odeur de l'encens parfume vos narines. Assis en position tailleur, un vieille homme pensif que vous apercevez en pleine séance de méditation. Uniquement en posant vos yeux sur lui, il se relève et vous salue respectueusement avant de vous introduire à la tâche que vous devez résoudre : une **énigme**.
 
 > Expliquer la sortie du programme tu devras,  
@@ -53,7 +51,7 @@ Voici la règle :
 Source: La règle
 
 ## Stand 3 : le côté obscur
-*Rapporte un nombre arbitraire de zestes sur 100 (en fonction de l'originalité !)*
+*Rapporte un nombre arbitraire de zestes sur 250 (en fonction de l'originalité !)*
 
 Epuisé par votre dernier combat, qui fut bien rude, vous allez discuter avec une des membres de Zeste de Savoir. Après avoir bien échangé, cette dernière vous avoue que le stand de pomme d'amour est sans surveillance depuis un moment. Vous ne voulez pas dépenser un seul *zeste* avant de rentrer dans le bar, mais d'un autre côté vous avez terriblement faim car vous êtes fatigué. La tentation est trop grande. Impossible d'y résister. Discrètement, vous vous approchez du stand et glissez votre main au niveau d'une pomme. Cependant, le gérant du stand apparaît de nul part ! Il vous aperçoit et vous tire à part derrière le stand. Après un long sermon, et des explications de votre part, le gérant accepte d'oublier ce qu'il a vu, mais a une seule condition : que vous l'aidiez.
 
@@ -71,7 +69,7 @@ N'y connaissant réellement rien, l'agent de la NSA vous demande d'écrire n'imp
 Vous êtes seul face à votre imagination... (quoi que vous avez accès à Internet !)
 
 ## Stand 4 : kamoulox !
-*Rapporte jusqu'à 150 zestes !*
+*Rapporte jusqu'à 500 zestes !*
 
 Avec tous vos *zestes*, vous vous dirigez vers le bar, fier de vous, et bien résolu a être nommé roi. En chemin, un homme vous dévisage et observe étrangement vos *zestes*.
 
@@ -88,7 +86,18 @@ L'homme du stand voit que vous ne lui faites pas confiance, et que vous êtes m�
 
 L'agent tend l'ordinateur contenant le programme, et vous assure de la seule chose qu'il connait : "le programme est écrit en C". Malheureusement, il a omis un détail majeur avant que vous n'acceptiez le défi. Le code est [obfusqué](http://cyberzoide.developpez.com/securite/obfuscation/) ! En effet, la NSA rajoute cette couche de sécurité à l'ensemble de ses programmes au cas où ils seraient divulgués !
 
-TODO : code + barème
+```c
+char*main(int l,char*s,char*_,int r,int t){
+return(l==7)?0:l==1&&r!=1?main(l,"wzqzmv{*##bv/{}qzv=*\
+|v|:;r/az~v=*|ve*&#;r/m|#vbm*|#evb#evez@zm~v=*|;r/tbnzv=*\
+|v$m=;r/@b=v{**e`=z;r/~zaavbva}zvb#ev'|m~v=*|lr/","r~{nb@:\
+#wmq;*=&z`'$}t|vlea\ntgkaspnNrv,oywebhcimu !dl",1,t):r>1?
+t>=3?*s=='/'?8:main(l,s,_,r,-9)?main(l,++s,_,r,3):
+-4:t<0?*s==*_?putchar(*(_+26)):main(l,s,++_,r,-7):
+!l?s:*s=='/'?main(++l,++s,_,r,2):main(l,++s,_,r,1):
+r?main(0,main(0,s,"mqk@]0",2,1),_,2,12),
+main(-l,main(-l,s,"qkK~z@",2,2),_,2,27),main(++l,s,_,r,t):8;}
+```
 
 ---
 
@@ -99,5 +108,7 @@ Quelle aventure ! Vous arrivez enfin au bar, après toutes ces épreuves, mais l
 | Pseudo | Stand 1 | Stand 2 | Stand 3 | Stand 4 | Total |
 | ------ | ------- | ------- | ------- | ------- | ----- |
 | | | | | |
+
+PS : l'attribution des *zestes* se ferra de manière arbitraire en fonction de vos recherches, découvertes, codes, explications, etc. Vous n'êtes pas du tout obligé de trouver la solution pour avoir des *zestes*, faites de votre mieux et bonne chance !
 
 *[JZDS]: Jeudi de Zeste de Savoir
