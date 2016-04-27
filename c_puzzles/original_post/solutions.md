@@ -1,30 +1,28 @@
 # Solutions
 
-## Stand 1
+## Challenge 1
+
+Pas de solution à faire.
+
+## Challenge 2
 
 La sortie du programme est :
 
 ```
-Le tableau n'a pas 3 elements.
-La chaine a 18 caracteres.
-Erreur taille.
+Probleme d'allocation memoire !
+Probleme de multiplication !
+Tout va bien !
 ```
 
-Sans doute le piège le plus "simple" était le ';' après le `else`, ce qui créait un bloc vide rendant le dernier `printf` toujours accessible quelque soit le résultat des conditions précédentes.
+- `Probleme d'allocation memoire !` : si on enlève le commentaire au dessus du `if`, le `printf` n'est pas exécuté ! En effet, le commentaire se finit avec le caractère '\', et en C cela annonce un commentaire **multiligne**. Le `if` est alors commenté mais la coloration syntaxique ne le montre pas (j'utilise le prétexte de ne pas vouloir de copier/coller pour décider de la coloration syntaxique). C'est d'ailleurs pourquoi il est interdit de le copier/coller dans un éditeur car sinon l'astuce est flagrante.
+- `Probleme de multiplication !` : c'est un problème assez connu des macros, qu'on appelle *effet de bord*. En effet, si on remplace le contenu de la condition par notre macro, on a : `a + 1 * b + 2` ce qui n'est pas ce à quoi on s'attendait (on espérait plutôt `(a + 1) * (b + 2)`). Le résultat n'est donc pas 12. Pour éviter ce genre de situation, il faut mettre des parenthèses dans la macro de cette façon : `multiplication(a,b) (a) * (b)`.
+- `Tout va bien !` : sans doute le piège le plus flagrant, car il y a un ';' juste après le `else` ce qui va créer un bloc vide. Le `printf` est alors **toujours** exécuté.
 
-Le deuxième piège, un peu plus compliqué cette fois, était pour la chaîne de caractères. Le plus étrange était bien sûr `r`, en C lorsqu'une expression est de la sorte `x = (y, z);`, cela revient à écrire `x = z;` car l'expression à gauche sera évaluée, puis celle à droite et c'est cette dernière que la variable prendra. Du coup, on a `r = 1;` (le coup du +1 pour le caractère \0 était un prétexte en réalité). Au passage, cette technique pour trouver le nombre d'éléments ne fonctionnent pas sur un pointeur de caractères, donc aucune chance d'avoir 18 en retour. J'avais aussi laissé la macro susceptible d'[effet de bord](https://fr.wikipedia.org/wiki/Effet_de_bord_%28informatique%29) pour laisser de fausses pistes.
-
-Maintenant, le piège fourbe : le premier `if`. Dans le texte, je prétends ne pas vouloir que les participants copient/collent afin aussi d'éviter que la syntaxe fasse ressortir le piège flagrant alors. Si on enlève le commentaire juste au dessus, le `printf` n'est pas exécuté ! C'est à cause du dernier caractère du commentaire '\'. En effet, ça annonce un commentaire multiligne et donc le `if` est considéré comme un commentaire aussi ! :D
-
-## Stand 2
+## Challenge 3
 
 Pas de solution à faire.
 
-## Stand 3
-
-Pas de solution à faire.
-
-## Stand 4
+## Challenge 4
 
 Inspiré de http://research.microsoft.com/en-us/um/people/tball/papers/XmasGift/
 
