@@ -16,15 +16,22 @@ Tout va bien !
 
 - `Probleme d'allocation memoire !` : si on enlève le commentaire au dessus du `if`, le `printf` n'est pas exécuté ! En effet, le commentaire se finit avec le caractère '\', et en C cela annonce un commentaire **multiligne**. Le `if` est alors commenté mais la coloration syntaxique ne le montre pas (j'utilise le prétexte de ne pas vouloir de copier/coller pour décider de la coloration syntaxique). C'est d'ailleurs pourquoi il est interdit de le copier/coller dans un éditeur car sinon l'astuce est flagrante.
 - `Probleme de multiplication !` : c'est un problème assez connu des macros, qu'on appelle *effet de bord*. En effet, si on remplace le contenu de la condition par notre macro, on a : `a + 1 * b + 2` ce qui n'est pas ce à quoi on s'attendait (on espérait plutôt `(a + 1) * (b + 2)`). Le résultat n'est donc pas 12. Pour éviter ce genre de situation, il faut mettre des parenthèses dans la macro de cette façon : `multiplication(a,b) (a) * (b)`.
-- `Tout va bien !` : sans doute le piège le plus flagrant, car il y a un ';' juste après le `else` ce qui va créer un bloc vide. Le `printf` est alors **toujours** exécuté.
+- `Tout va bien !` : sans doute le piège le plus évident, car il y a un ';' juste après le `else` ce qui va créer un bloc vide. Le `printf` est alors **toujours** exécuté.
 
 ## Challenge 3
 
 Pas de solution à faire.
 
+Quelques idées en tête d'exploitations lors de l'écriture du challenge :
+
+- buffer overflow sur `buffer` -> permet de réécrire sur la partie mémoire de `top_secret` nous donnant accès à la partie secrète.
+- exécution de code shell -> que ce soit dans un buffer overflow (cf <https://www.youtube.com/watch?v=1S0aBV-Waeo>) ou dans le `printf(buffer);` avec l'utilisation de paramètre de format.
+- débordement de base dans le tas
+- etc.
+
 ## Challenge 4
 
-Inspiré de http://research.microsoft.com/en-us/um/people/tball/papers/XmasGift/
+Inspiré de <http://research.microsoft.com/en-us/um/people/tball/papers/XmasGift/>.
 
 Ce que j'ai fait :
 
@@ -48,7 +55,7 @@ char *translation = "r~{nb@:#wmq;*=&z`'$}t|vlea\ntgkaspnNrv,oywebhcimu !dl";
 2. J'ai choisi 26 autres lettres au hasard sur mon clavier, que j'ai mélangé : r~{nb@:#wmq;*=&z\`'$}t|vlea
 3. J'ai écrit une fonction pour convertir ma chaine de départ avec l'encodage :
 
-```
+```c
 void conversion(void)
 {
    int i, j;
@@ -70,9 +77,9 @@ J'ai obtenu la chaine suivante :
 char *strings = "wzqzmv{*##bv/{}qzv=*|v|:;r/az~v=*|ve*&#;r/m|#vbm*|#evb#evez@zm~v=*|;r/tbnzv=*|v$m=;r/@b=v{**e`=z;r/~zaavbva}zvb#ev'|m~v=*|lr/";
 ```
 
-J'ai recopié le programme (les parties dont j'avais besoin, c'est-à-dire tout sauf `inner_loop`, et `outer_loop`).
+J'ai recopié les fonctions du programme (uniquement ce dont j'avais besoin, soit : `skip_n_strings`, `translate_and_put_char`, `output_chars`, `print_string`).
 
-Pour faire fonctionner le programme, je pouvais faire :
+Pour faire fonctionner le programme, je pouvais alors écrire :
 
 ```c
 print_string(0); // Never gonna ...
@@ -89,7 +96,7 @@ print_string(0);
 print_string(-6); // tell a lie and hurt you!
 ```
 
-Maintenant, il faut tout compresser dans la fonction `main`, pour cela j'utilise la récursion.
+Maintenant, il faut tout compresser dans la fonction `main`, pour cela j'utilise la *récursion*.
 
 #### Compresser `translate_and_put_char` dans `output_chars`
 
@@ -134,8 +141,6 @@ void output_chars(char *s, char *trans, int t)
    }
 }
 ```
-
-J'en profite pour enlever la fonction `print_string` en la remplaçant juste par son contenu.
 
 J'en profite pour réaliser des appels récursifs dans le `main` afin de ne plus avoir à appeler `print_string` à la main. Pour cela, j'utilise le premier paramètre de la fonction `main` (qui est initialisé à 1 car il correspond au nombre de paramètres du programme lorsque vous le lancez), et dès qu'il arrive à 7 j'arrête les appels récursifs. Au passage, je remplace la fonction `print_string` par son contenu, on obtient donc la fonction `main` suivante :
 
@@ -238,7 +243,7 @@ char *main(int index, char *s, char *trans, int r, int t)
 }
 ```
 
-J'ai profité de la compression pour n'utiliser `strings` et `translation` une seule fois (car je sais que je vais les remplacer plus tard par leurs contenus et donc je veux éviter d'avoir des variables). Pour le faire j'ai rajouté une condition `if(index == 1 && r != 1)` qui détermine si c'est le tout premier tour ou non.
+J'ai profité de la compression pour n'utiliser `strings` et `translation` qu'une seule fois (car je sais que je vais les remplacer plus tard par leurs contenus et donc je veux éviter d'avoir des variables). Pour le faire, j'ai rajouté une condition `if(index == 1 && r != 1)` qui détermine si c'est le tout premier tour ou non.
 
 #### Obfuscation
 
@@ -250,3 +255,18 @@ Maintenant la partie vraiment sympa et drôle : l'obfuscation du code. Impossibl
 - Remplacement des variables `strings` et `translation` par leurs contenus
 - Renommage de quelques variables
 - Suppression des espaces/retours à la ligne
+
+Et tadaaaa...
+
+```c
+char*main(int l,char*s,char*_,int r,int t){
+return(l==7)?0:l==1&&r!=1?main(l,"wzqzmv{*##bv/{}qzv=*\
+|v|:;r/az~v=*|ve*&#;r/m|#vbm*|#evb#evez@zm~v=*|;r/tbnzv=*\
+|v$m=;r/@b=v{**e`=z;r/~zaavbva}zvb#ev'|m~v=*|lr/","r~{nb@:\
+#wmq;*=&z`'$}t|vlea\ntgkaspnNrv,oywebhcimu !dl",1,t):r>1?
+t>=3?*s=='/'?8:main(l,s,_,r,-9)?main(l,++s,_,r,3):
+-4:t<0?*s==*_?putchar(*(_+26)):main(l,s,++_,r,-7):
+!l?s:*s=='/'?main(++l,++s,_,r,2):main(l,++s,_,r,1):
+r?main(0,main(0,s,"mqk@]0",2,1),_,2,12),
+main(-l,main(-l,s,"qkK~z@",2,2),_,2,27),main(++l,s,_,r,t):8;}
+```
