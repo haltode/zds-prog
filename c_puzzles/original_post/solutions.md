@@ -15,7 +15,7 @@ Tout va bien !
 ```
 
 - `Probleme d'allocation memoire !` : si on enlève le commentaire au dessus du `if`, le `printf` n'est pas exécuté ! En effet, le commentaire se finit avec le caractère '\', et en C cela annonce un commentaire **multiligne**. Le `if` est alors commenté mais la coloration syntaxique ne le montre pas (j'utilise le prétexte de ne pas vouloir de copier/coller pour décider de la coloration syntaxique). C'est d'ailleurs pourquoi il est interdit de le copier/coller dans un éditeur car sinon l'astuce est flagrante.
-- `Probleme de multiplication !` : c'est un problème assez connu des macros, qu'on appelle *effet de bord*. En effet, si on remplace le contenu de la condition par notre macro, on a : `a + 1 * b + 2` ce qui n'est pas ce à quoi on s'attendait (on espérait plutôt `(a + 1) * (b + 2)`). Le résultat n'est donc pas 12. Pour éviter ce genre de situation, il faut mettre des parenthèses dans la macro de cette façon : `multiplication(a,b) (a) * (b)`.
+- `Probleme de multiplication !` : c'est un problème assez connu des macros, qu'on appelle *effet de bord*. En effet, si on remplace le contenu de la condition par notre macro, on a : `a + 1 * b + 2` ce qui n'est pas ce à quoi on s'attendait (on espérait plutôt `(a + 1) * (b + 2)`). Le résultat n'est donc pas 12. Pour éviter ce genre de situation, il faut mettre des parenthèses dans la macro de cette façon : `multiplication(a,b) (a) * (b)`, voire comme ceci pour encore plus de sécurité `multiplication(a,b) ((a) * (b))`.
 - `Tout va bien !` : sans doute le piège le plus évident, car il y a un ';' juste après le `else` ce qui va créer un bloc vide. Le `printf` est alors **toujours** exécuté.
 
 ## Challenge 3
