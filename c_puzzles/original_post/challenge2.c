@@ -19,7 +19,7 @@ int main(void)
    if(!s)
       printf("Probleme d'allocation memoire !\n");
    if(multiplication(a + 1, b + 2) != 12)
-      printf("Problème de multiplication !\n");
+      printf("Probleme de multiplication !\n");
    else;
       printf("Tout va bien !\n");
 
