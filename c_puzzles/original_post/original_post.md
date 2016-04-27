@@ -75,9 +75,14 @@ int main(int argc, char **argv)
 
 L'idée ici est, dans un premier temps, de repérer la/les faille(s), puis de chercher à l'/les exploiter pour créer des comportements non voulus (par exemple rentrer dans la partie secrète du programme, **mais pas que !**).
 
-A vous de faire vos propres recherches sur la manière d'aborder le sujet. Mais pour ceux qui sont totalement perdus, je vous conseille de regarder du côté du [buffer overflow](https://fr.wikipedia.org/wiki/D%C3%A9passement_de_tampon) pour vous aider...
+A vous de faire vos propres recherches sur la manière d'aborder le sujet. Mais pour ceux qui sont totalement perdus, je vous conseille une certain approche en lisant ces quelques articles qui vous aideront grandement à commencer :
 
-*Si vous avez réussi à trouver une faille facilement, essayez d'en chercher d'autres. Ca peut toujours être intéressant....*
+- [Introduction à la rétroingénierie de binaires](https://zestedesavoir.com/articles/97/introduction-a-la-retroingenierie-de-binaires/)
+- [Introduction aux buffer overflows](https://zestedesavoir.com/articles/100/introduction-aux-buffer-overflows/)
+- [Ecrivez votre premier shellcode en asm x86](https://zestedesavoir.com/articles/158/ecrivez-votre-premier-shellcode-en-asm-x86/)
+- [Exploitez votre premier stack-based overflow](https://zestedesavoir.com/articles/143/exploitez-votre-premier-stack-based-overflow/)
+
+*Si vous avez réussi à trouver une faille facilement, essayez d'en chercher d'autres. Cela peut toujours être intéressant...*
 
 ## This is madness !
 
