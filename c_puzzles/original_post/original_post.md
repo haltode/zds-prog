@@ -9,7 +9,7 @@ Aujourd'hui je vous apporte des petits défis de programmation à résoudre en C
 [[question]]
 | Pourquoi avoir choisi le C ?
 
-A la base, j'avais rédigé ces défis pour un futur [défi de Clem](https://zestedesavoir.com/forums/sujet/3813/les-defis-de-clem/) mais après avoir eu quelques retours et sur une décision personnelle, j'ai transformé ce défi en *atelier* car il était déjà trop orienté vers le C (or les défis de Clem se veulent neutre en langage), et je préfère réaliser un bon atelier plutôt qu'un défi médiocre à cause d'un choix de langage. ;) D'autant plus, je ne pense pas que se limiter à un seul langage soit une mauvaise chose (cf le [Javaquarium](https://zestedesavoir.com/forums/sujet/447/javaquarium/) qui était au départ uniquement pour le Java), et au contraire un mélange entre choix du langage et langage spécifique permet d'explorer bien des idées.
+A la base, j'avais rédigé ces défis pour un futur [défi de Clem](https://zestedesavoir.com/forums/sujet/3813/les-defis-de-clem/) mais après avoir eu quelques retours et sur une décision personnelle, j'ai transformé ce défi en *atelier* car il était déjà trop orienté vers le C (or les défis de Clem se veulent neutre en langage), et je préfère réaliser un bon atelier plutôt qu'un défi médiocre à cause d'un choix de langage. D'autant plus, je ne pense pas que se limiter à un seul langage soit une mauvaise chose (cf le [Javaquarium](https://zestedesavoir.com/forums/sujet/447/javaquarium/) qui était au départ uniquement pour le Java), et au contraire un mélange entre choix du langage et langage spécifique permet d'explorer bien des idées.
 
 Maintenant, place aux différents challenges qui sont présentés par ordre de difficulté.
 
@@ -35,7 +35,7 @@ Le but de ce deuxième défi est d'expliquer la sortie de ce programme, c'est-à
 - Interdit de compiler le code.
 - Vous devez uniquement le lire ici.
 
-![On a dit pas de copier/coller !](https://github.com/napnac/zds-prog/blob/master/c_puzzles/original_post/image_code_challenge2.png)
+![On a dit pas de copier/coller !](https://raw.githubusercontent.com/napnac/zds-prog/master/c_puzzles/original_post/image_code_challenge2.png)
 
 ## NSA
 
